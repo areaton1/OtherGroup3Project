@@ -484,28 +484,50 @@ def chatbot():
         
         context += f"User question: {message}\n\nProvide a helpful, concise response."
         
-        # Call Gemini API
+        # Call Gemini API - use gemini-2.5-flash (current model)
+        api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
+        
         response = requests.post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={GEMINI_API_KEY}",
+            api_url,
             json={
                 "contents": [{
                     "parts": [{"text": context}]
                 }]
             },
-            timeout=10
+            timeout=15
         )
         
         if response.status_code != 200:
-            return jsonify({'error': 'Gemini API error'}), 500
+            error_detail = response.text
+            try:
+                error_json = response.json()
+                error_detail = error_json.get('error', {}).get('message', error_detail)
+            except:
+                pass
+            print(f"Gemini API Error: {response.status_code} - {error_detail}")
+            return jsonify({'error': f'Gemini API error: {error_detail}'}), 500
         
         result = response.json()
+        
+        # Check if response has expected structure
+        if 'candidates' not in result or len(result['candidates']) == 0:
+            print(f"Unexpected Gemini response structure: {result}")
+            return jsonify({'error': 'Unexpected response from Gemini API'}), 500
+        
         ai_response = result['candidates'][0]['content']['parts'][0]['text']
         
         return jsonify({
             'response': ai_response,
             'related_cves': results
         })
+    except requests.exceptions.RequestException as e:
+        print(f"Request exception: {e}")
+        return jsonify({'error': f'Network error: {str(e)}'}), 500
+    except KeyError as e:
+        print(f"KeyError in response: {e}")
+        return jsonify({'error': f'Unexpected API response format: {str(e)}'}), 500
     except Exception as e:
+        print(f"Unexpected error: {e}")
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
