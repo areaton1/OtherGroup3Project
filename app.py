@@ -401,7 +401,7 @@ def get_saved_vulnerabilities():
         cursor.execute("""
             SELECT v.*, a.severity, a.bio_relevance 
             FROM vulnerabilities v
-            LEFT JOIN alerts a ON v.cve_id = a.cve_id
+            LEFT JOIN alerts a ON v.cve_id COLLATE utf8mb4_unicode_ci = a.cve_id COLLATE utf8mb4_unicode_ci
             WHERE v.user_id = %s
             ORDER BY v.date_added DESC
         """, (session['user_id'],))
