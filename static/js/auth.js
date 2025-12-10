@@ -25,8 +25,14 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
       return;
     }
 
-    // Success - redirect to dashboard
-    window.location.href = '/dashboard.html';
+    // Success - add swoop transition then redirect
+    const swoop = document.createElement('div');
+    swoop.className = 'swoop-transition';
+    document.body.appendChild(swoop);
+    
+    setTimeout(() => {
+      window.location.href = '/dashboard.html';
+    }, 400);
   } catch (error) {
     errorDiv.textContent = 'Connection error. Please try again.';
     errorDiv.classList.remove('d-none');
@@ -58,8 +64,14 @@ document.getElementById('signupForm').addEventListener('submit', async (e) => {
       return;
     }
 
-    // Success - redirect to dashboard
-    window.location.href = '/dashboard.html';
+    // Success - add swoop transition then redirect
+    const swoop = document.createElement('div');
+    swoop.className = 'swoop-transition';
+    document.body.appendChild(swoop);
+    
+    setTimeout(() => {
+      window.location.href = '/dashboard.html';
+    }, 400);
   } catch (error) {
     errorDiv.textContent = 'Connection error. Please try again.';
     errorDiv.classList.remove('d-none');

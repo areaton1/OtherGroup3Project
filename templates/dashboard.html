@@ -18,7 +18,7 @@
   </head>
   <body class="bg-light">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
         <a class="navbar-brand fw-bold" href="/dashboard.html">
           <span class="text-success">◆</span> CVE Dashboard
@@ -44,10 +44,10 @@
               <a class="nav-link" href="/saved.html">My Saved</a>
             </li>
             <li class="nav-item">
-              <span class="nav-link text-light" id="navUsername">User</span>
+              <span class="nav-link" id="navUsername" style="color: #1d1d1f;">User</span>
             </li>
             <li class="nav-item">
-              <button class="btn btn-sm btn-outline-light ms-2" id="logoutBtn">Sign Out</button>
+              <button class="btn btn-sm btn-outline-success ms-2" id="logoutBtn">Sign Out</button>
             </li>
           </ul>
         </div>
@@ -55,70 +55,62 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container-fluid py-4">
+    <div class="container-fluid py-5">
       <!-- Hero Section -->
-      <div class="text-center mb-4">
-        <div class="badge bg-success-subtle text-success-emphasis px-3 py-2 mb-3">
+      <div class="hero-section">
+        <div class="hero-badge">
           ✨ AI-POWERED ANALYSIS
         </div>
-        <h1 class="display-5 fw-bold text-success mb-2">Threat Intelligence</h1>
-        <p class="text-muted">Real-time vulnerability monitoring with AI-driven insights</p>
+        <h1 class="hero-title">Threat Intelligence</h1>
+        <p class="hero-subtitle">Real-time vulnerability monitoring with AI-driven insights</p>
       </div>
 
       <!-- Stats Cards -->
-      <div class="row g-4 mb-4">
+      <div class="row g-4 mb-5">
         <div class="col-md-3">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-body text-center">
-              <div class="text-muted text-uppercase small mb-2">Total Alerts</div>
-              <div class="display-4 fw-bold" id="statTotal">-</div>
-              <div class="text-end mt-2">
-                <span class="fs-1">🎯</span>
-              </div>
+          <div class="card stats-card h-100">
+            <div class="text-muted text-uppercase small mb-2" style="letter-spacing: 0.1em;">Total Alerts</div>
+            <div class="display-4 fw-bold mb-3" id="statTotal" style="color: #1d1d1f;">-</div>
+            <div class="text-end">
+              <span class="fs-1">🎯</span>
             </div>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card border-0 shadow-sm h-100 bg-danger-subtle">
-            <div class="card-body text-center">
-              <div class="text-muted text-uppercase small mb-2">KEV Vulnerabilities</div>
-              <div class="display-4 fw-bold text-danger" id="statKEV">-</div>
-              <div class="text-end mt-2">
-                <span class="fs-1">🔥</span>
-              </div>
+          <div class="card stats-card h-100" style="background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(200, 35, 51, 0.05) 100%);">
+            <div class="text-muted text-uppercase small mb-2" style="letter-spacing: 0.1em;">KEV Vulnerabilities</div>
+            <div class="display-4 fw-bold mb-3 text-danger" id="statKEV">-</div>
+            <div class="text-end">
+              <span class="fs-1">🔥</span>
             </div>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card border-0 shadow-sm h-100 bg-warning-subtle">
-            <div class="card-body text-center">
-              <div class="text-muted text-uppercase small mb-2">Bio-Relevant</div>
-              <div class="display-4 fw-bold text-warning" id="statBio">-</div>
-              <div class="text-end mt-2">
-                <span class="fs-1">🧬</span>
-              </div>
+          <div class="card stats-card h-100" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(224, 168, 0, 0.05) 100%);">
+            <div class="text-muted text-uppercase small mb-2" style="letter-spacing: 0.1em;">Bio-Relevant</div>
+            <div class="display-4 fw-bold mb-3 text-warning" id="statBio">-</div>
+            <div class="text-end">
+              <span class="fs-1">🧬</span>
             </div>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card border-0 shadow-sm h-100 bg-success-subtle">
-            <div class="card-body text-center">
-              <div class="text-muted text-uppercase small mb-2">This Month</div>
-              <div class="display-4 fw-bold text-success" id="statMonth">-</div>
-              <div class="text-end mt-2">
-                <span class="fs-1">📅</span>
-              </div>
+          <div class="card stats-card h-100" style="background: linear-gradient(135deg, rgba(25, 135, 84, 0.1) 0%, rgba(32, 201, 151, 0.05) 100%);">
+            <div class="text-muted text-uppercase small mb-2" style="letter-spacing: 0.1em;">This Month</div>
+            <div class="display-4 fw-bold mb-3 text-success" id="statMonth">-</div>
+            <div class="text-end">
+              <span class="fs-1">📅</span>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Bio-Relevance & Top Vendors -->
-      <div class="row g-4 mb-4">
+      <div class="row g-4 mb-5">
         <div class="col-md-6">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title mb-4">Bio-Relevance Distribution</h5>
+              <h5 class="card-title mb-4 fw-bold">Bio-Relevance Distribution</h5>
               <div class="row g-3">
                 <div class="col-4 text-center">
                   <div class="badge bg-danger rounded-circle p-3 mb-2">●</div>
@@ -140,10 +132,10 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card h-100">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center mb-4">
-                <h5 class="card-title mb-0">Top Affected Vendors</h5>
+                <h5 class="card-title mb-0 fw-bold">Top Affected Vendors</h5>
                 <span class="badge bg-success rounded-pill">5</span>
               </div>
               <div class="list-group list-group-flush" id="topVendorsList">
@@ -155,12 +147,12 @@
       </div>
 
       <!-- Top Products & Timeline -->
-      <div class="row g-4 mb-4">
+      <div class="row g-4 mb-5">
         <div class="col-md-6">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card h-100">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center mb-4">
-                <h5 class="card-title mb-0">Top Products</h5>
+                <h5 class="card-title mb-0 fw-bold">Top Products</h5>
                 <span class="badge bg-success rounded-pill">5</span>
               </div>
               <div class="list-group list-group-flush" id="topProductsList">
@@ -170,9 +162,9 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title mb-4">Publication Timeline</h5>
+              <h5 class="card-title mb-4 fw-bold">Publication Timeline</h5>
               <div class="list-group list-group-flush" id="timelineList">
                 <div class="text-center text-muted py-3">Loading...</div>
               </div>
@@ -182,12 +174,12 @@
       </div>
 
       <!-- Priority Alerts & Data Sources -->
-      <div class="row g-4 mb-4">
+      <div class="row g-4 mb-5">
         <div class="col-md-8">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card h-100">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center mb-4">
-                <h5 class="card-title mb-0">Priority Alerts</h5>
+                <h5 class="card-title mb-0 fw-bold">Priority Alerts</h5>
                 <span class="badge bg-danger rounded-pill">10</span>
               </div>
               <div class="list-group list-group-flush" id="priorityAlertsList">
@@ -197,10 +189,10 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card h-100">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center mb-4">
-                <h5 class="card-title mb-0">Data Sources</h5>
+                <h5 class="card-title mb-0 fw-bold">Data Sources</h5>
                 <span class="badge bg-success rounded-pill">2</span>
               </div>
               <div class="list-group list-group-flush">
@@ -227,40 +219,49 @@
 
     <!-- AI Assistant Button -->
     <button
-      class="btn btn-success btn-lg rounded-circle shadow-lg position-fixed bottom-0 end-0 m-4"
-      style="width: 60px; height: 60px;"
+      class="btn btn-success shadow-lg position-fixed bottom-0 end-0 m-4 ai-assistant-btn"
       data-bs-toggle="modal"
       data-bs-target="#chatModal"
       title="AI Assistant"
     >
-      💡
+      <span class="ai-icon me-2">💡</span>
+      <span class="ai-label">AI Assistant</span>
     </button>
 
     <!-- Chat Modal -->
     <div class="modal fade" id="chatModal" tabindex="-1">
-      <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-dialog modal-dialog-scrollable modal-lg">
         <div class="modal-content">
-          <div class="modal-header bg-success text-white">
-            <h5 class="modal-title">AI Assistant</h5>
+          <div class="modal-header bg-success text-white ai-modal-header">
+            <div class="d-flex align-items-center">
+              <span class="fs-2 me-3">🤖</span>
+              <div>
+                <h4 class="modal-title mb-0 fw-bold">AI Assistant</h4>
+                <small class="opacity-75">Powered by Gemini</small>
+              </div>
+            </div>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
           </div>
-          <div class="modal-body" id="chatMessages" style="min-height: 400px;">
+          <div class="modal-body ai-chat-body" id="chatMessages">
             <div class="text-center text-muted py-5">
               <span class="fs-1">🤖</span>
-              <p class="mt-3">Ask me anything about CVEs and cybersecurity!</p>
+              <p class="mt-3 fs-5">Ask me anything about CVEs and cybersecurity!</p>
             </div>
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer ai-chat-footer">
             <form id="chatForm" class="w-100">
-              <div class="input-group">
+              <div class="input-group input-group-lg">
                 <input
                   type="text"
-                  class="form-control"
+                  class="form-control form-control-lg"
                   id="chatInput"
-                  placeholder="Type your question..."
+                  placeholder="Type your question about CVEs, vulnerabilities, or cybersecurity..."
                   required
                 />
-                <button type="submit" class="btn btn-success">Send</button>
+                <button type="submit" class="btn btn-success btn-lg px-4">
+                  <span>Send</span>
+                  <span class="ms-2">➤</span>
+                </button>
               </div>
             </form>
           </div>
