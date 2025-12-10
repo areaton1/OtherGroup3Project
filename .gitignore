@@ -26,3 +26,6 @@ Thumbs.db
 instance/
 .webassets-cache
 
+# Environment variables
+.env
+
