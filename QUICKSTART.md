@@ -31,7 +31,7 @@ mysql -h m7wltxurw8d2n21q.cbetxkdyhwsb.us-east-1.rds.amazonaws.com \
   -p ond7op6xmute4kcm < create_admin.sql
 ```
 
-Password: `e5voj8n91k1ni3m6`
+Password: `nxmebq1lgfp56e15`
 
 ## Step 4: Run the App
 

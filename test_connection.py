@@ -17,7 +17,7 @@ def test_connection():
     config = {
         'host': os.getenv('DB_HOST', 'm7wltxurw8d2n21q.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'),
         'user': os.getenv('DB_USER', 'it2jpmptcbrfz9gq'),
-        'password': os.getenv('DB_PASSWORD', 'e5voj8n91k1ni3m6'),
+        'password': os.getenv('DB_PASSWORD', 'nxmebq1lgfp56e15'),
         'database': os.getenv('DB_NAME', 'ond7op6xmute4kcm'),
         'port': int(os.getenv('DB_PORT', 3306))
     }

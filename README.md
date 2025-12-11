@@ -124,7 +124,7 @@ All configuration is in `.env` file (already included):
 # Database (AWS RDS)
 DB_HOST=m7wltxurw8d2n21q.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
 DB_USER=it2jpmptcbrfz9gq
-DB_PASSWORD=e5voj8n91k1ni3m6
+DB_PASSWORD=nxmebq1lgfp56e15
 DB_NAME=ond7op6xmute4kcm
 DB_PORT=3306
 
@@ -132,7 +132,7 @@ DB_PORT=3306
 SECRET_KEY=cve-dashboard-secret-key-2025
 
 # Gemini AI
-GEMINI_API_KEY=AIzaSyCRIPjp3dwmWR9VSvx4S2-JDFQY-3bpoeo
+GEMINI_API_KEY=AIzaSyDr7BAxK5BaM2_9De9vu1UYLi6PS13hF9M
 ```
 
 **Everything is pre-configured. No changes needed!**
